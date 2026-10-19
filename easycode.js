@@ -1,30 +1,44 @@
-"use strict";
+
+// element ka size 
+HTMLElement.prototype.sizeWh = function (width, height) {
+    this.style.width = width;
+    this.style.height = height;
+};
+// button txtColor ans background color 
+HTMLElement.prototype.aColor = function (bgCol, txtCol) {
+    this.style.backgroundColor = bgCol;
+    this.style.color = txtCol;
+};
+// elemet ka font size 
+HTMLElement.prototype.setFontSize = function (fntSize) {
+    this.style.fontSize = fntSize;
+};
+//element border redius 
+HTMLElement.prototype.setBorderRadius = function (borderrRadius) {
+    this.style.borderRadius = borderrRadius;
+};
+// element font weight 
+HTMLElement.prototype.setTextWeight = function (fontWeightValue) {
+    this.style.fontWeight = fontWeightValue;
+};
+// space elemet letter 
+HTMLElement.prototype.spaceLetter = function (spaceLetterValue) {
+    this.style.letterSpacing = spaceLetterValue;
+};
+// elemet corusor
+HTMLElement.prototype.setCursor = function (cursorValue) {
+    this.style.cursor = cursorValue;
+};
+// elemet border 
+HTMLElement.prototype.setBorder = function (borderValue) {
+    this.style.border = borderValue;
+};
 // create button function 
 function createButton(text) {
     var crBtn = document.createElement("button");
     crBtn.textContent = text;
     document.body.appendChild(crBtn);
-    // button style
-    crBtn.sizeWh = function (width, height) {
-        crBtn.style.width = width;
-        crBtn.style.height = height;
-    };
-    // button txtColor ans background color 
-    crBtn.aColor = function (bgCol, txtCol) {
-        crBtn.style.backgroundColor = bgCol;
-        crBtn.style.color = txtCol;
-    };
-    crBtn.setFontSize = function (fntSize) {
-        crBtn.style.fontSize = fntSize;
-    };
-    crBtn.setBorderRadius = function (borderrRadius) {
-        crBtn.style.borderRadius = borderrRadius;
-    };
-    crBtn.setTextWeight = function (fontWeightValue) {
-        crBtn.style.fontWeight = fontWeightValue;
-    };
-    crBtn.spaceLetter = function (spaceLetterValue) {
-        crBtn.style.letterSpacing = spaceLetterValue;
-    };
     return crBtn;
 }
+
+//export {};
