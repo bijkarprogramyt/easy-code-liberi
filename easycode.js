@@ -105,7 +105,7 @@ HTMLElement.prototype.setPadding = function(oneValue,towValue,threeValue,fourVal
   return this;
 }
 
-// set background color method 
+// set background color method (=> new <= )
 
 HTMLElement.prototype.setBackgroundColor = function(setBackgroundColorValue){
   this.style.backgroundColor = setBackgroundColorValue;
