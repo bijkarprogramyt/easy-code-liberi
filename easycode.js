@@ -1,3 +1,17 @@
+// html selector (=> new <=)
+
+function $(selector){
+  var htmlElemet = selector.charAt(0);
+  var element = selector.substring(1);
+  if (htmlElemet == "#") {
+    return document.getElementById(element)
+  }
+  if (htmlElemet == ".") {
+    return document.getElementsByClassName(element);
+  }
+  return document.getElementsByTagName(selector);
+}
+
 // create button function 
 
 function createButton(textButton){
@@ -7,7 +21,14 @@ function createButton(textButton){
   return crBtn;
 }
 
+// html tag function (=> new <=)
 
+function renderHTML(tag){
+  var fragment = document.createRange().createContextualFragment(tag);
+  var HtmlElement = fragment.firstElementChild;
+  document.body.appendChild(HtmlElement);
+  return HtmlElement;
+}
 // set size method 
 
 HTMLElement.prototype.setSize = function(width,height){
@@ -88,14 +109,14 @@ HTMLElement.prototype.setMargin = function(oneValue,towValue,threeValue,fourValu
   return this;
 }
 
-//center align methid(=> new <=)
+//center align methid 
 
 HTMLElement.prototype.centerAlign = function(centerAlignValue){
   this.style.textAlign = "center";
   return this;
 }
 
-// set padding method (=> new <=)
+// set padding method 
 
 HTMLElement.prototype.setPadding = function(oneValue,towValue,threeValue,fourValue) {
   this.style.padding = oneValue;
@@ -105,10 +126,30 @@ HTMLElement.prototype.setPadding = function(oneValue,towValue,threeValue,fourVal
   return this;
 }
 
-// set background color method (=> new <= )
+// set background color method 
 
 HTMLElement.prototype.setBackgroundColor = function(setBackgroundColorValue){
   this.style.backgroundColor = setBackgroundColorValue;
+  return this;
+}
+
+// setColor method (=> new <=)
+
+HTMLElement.prototype.setColor = function(setColorValue){
+  this.style.color = setColorValue;
+  return this;
+}
+// setId method (=> new <=)
+
+HTMLElement.prototype.setId = function(setIdValue){
+  this.id = setIdValue;
+  return this;
+}
+
+// margin left method 
+
+HTMLElement.prototype.setMarginLeft = function (setMarginLeftValue) {
+  this.style.marginLeft = setMarginLeftValue;
   return this;
 }
 // set size Px method 
@@ -140,6 +181,8 @@ HTMLElement.prototype.setFontSizePx = function(setFontSizePxValue){
   this.style.fontSize = typeof setFontSizePxValue == "number" ? setFontSizePxValue + "px" : setFontSizePxValue;
   return this;
 }
+
+
 // set width and height method 
 
 HTMLElement.prototype.sizeWh = HTMLElement.prototype.setSize;
@@ -149,23 +192,3 @@ HTMLElement.prototype.sizeWh = HTMLElement.prototype.setSize;
 HTMLElement.prototype.sizeWhPx = HTMLElement.prototype.setSizePx;
 
 // testing a all function and method 
-
-// button style 
-var x = createButton("myButton");
-x.setSize("130px","50px");
-x.setFontSizePx(16)
-x.boldText();
-x.aColor("blue","white");
-x.setBorderRadius("8px");
-x.letterSpacing("2px")
-x.setCursor("pointer")
-x.setBorder("none");
-x.setMarginPx(10,80,10,90);
-
-// bldy style 
-var body = document.getElementById("body");
-body.setBackgroundColor("yellow");
-
-// h1 style
-var h1 = document.getElementById("id1");
-h1.centerAlign();
