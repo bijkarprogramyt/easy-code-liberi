@@ -78,7 +78,7 @@ HTMLElement.prototype.boldText = function(){
   return this;
 }
 
-// get margin method (=> new <=)
+// get margin method 
 
 HTMLElement.prototype.setMargin = function(oneValue,towValue,threeValue,fourValue) {
   this.style.margin = oneValue;
@@ -88,6 +88,29 @@ HTMLElement.prototype.setMargin = function(oneValue,towValue,threeValue,fourValu
   return this;
 }
 
+//center align methid(=> new <=)
+
+HTMLElement.prototype.centerAlign = function(centerAlignValue){
+  this.style.textAlign = "center";
+  return this;
+}
+
+// set padding method (=> new <=)
+
+HTMLElement.prototype.setPadding = function(oneValue,towValue,threeValue,fourValue) {
+  this.style.padding = oneValue;
+  this.style.padding = towValue;
+  this.style.padding = threeValue;
+  this.style.padding = fourValue;
+  return this;
+}
+
+// set background color method 
+
+HTMLElement.prototype.setBackgroundColor = function(setBackgroundColorValue){
+  this.style.backgroundColor = setBackgroundColorValue;
+  return this;
+}
 // set size Px method 
 
 HTMLElement.prototype.setSizePx = function(width,height){
@@ -96,7 +119,7 @@ HTMLElement.prototype.setSizePx = function(width,height){
   return this;
 }
 
-// set Margin Px method (=> new <=)
+// set Margin Px method 
 
 HTMLElement.prototype.setMarginPx = function(oneValue,towValue,towValue,fourValue) {
   
@@ -111,7 +134,7 @@ HTMLElement.prototype.setMarginPx = function(oneValue,towValue,towValue,fourValu
   return this;
 } 
 
-// set font size px method (=> new <=)
+// set font size px method 
 
 HTMLElement.prototype.setFontSizePx = function(setFontSizePxValue){
   this.style.fontSize = typeof setFontSizePxValue == "number" ? setFontSizePxValue + "px" : setFontSizePxValue;
@@ -127,6 +150,7 @@ HTMLElement.prototype.sizeWhPx = HTMLElement.prototype.setSizePx;
 
 // testing a all function and method 
 
+// button style 
 var x = createButton("myButton");
 x.setSize("130px","50px");
 x.setFontSizePx(16)
@@ -136,4 +160,12 @@ x.setBorderRadius("8px");
 x.letterSpacing("2px")
 x.setCursor("pointer")
 x.setBorder("none");
-x.setMarginPx(10,80,10,90)
+x.setMarginPx(10,80,10,90);
+
+// bldy style 
+var body = document.getElementById("body");
+body.setBackgroundColor("yellow");
+
+// h1 style
+var h1 = document.getElementById("id1");
+h1.centerAlign();
