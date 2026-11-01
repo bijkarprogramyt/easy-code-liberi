@@ -152,11 +152,32 @@ HTMLElement.prototype.setMarginLeft = function(setMarginLeftValue) {
   this.style.marginLeft = setMarginLeftValue;
   return this;
 }
-// set display proparty (=> new =)
+// set display proparty 
 HTMLElement.prototype.setDisplay = function(setDisplayValue){
   this.style.display = setDisplayValue;
   return this;
 }
+
+// set none display method (=> new <=)
+
+HTMLElement.prototype.setNoneDisplay = function() {
+  this.style.display = "none";
+  return this;
+}
+
+// set event method (=> new <=)
+
+HTMLElement.prototype.setEvent = function(myEvent,callBack) {
+  this.addEventListener(myEvent,callBack);
+  return this;
+}
+
+// set bone border method 
+
+HTMLElement.prototype.setNoneBorder = function(){
+  this.style.border = "none";
+}
+
 // set size Px method 
 
 HTMLElement.prototype.setSizePx = function(width, height) {
@@ -187,7 +208,12 @@ HTMLElement.prototype.setFontSizePx = function(setFontSizePxValue) {
   return this;
 }
 
+// set border redius px method (=> new <=)
 
+HTMLElement.prototype.setBorderRadiusPx = function(setBorderRadiusPxValue){
+  this.style.borderRadius = typeof setBorderRadiusPxValue == "number" ? setBorderRadiusPxValue + "px" : setBorderRadiusPxValue;
+  return this;
+}
 // set width and height method 
 
 HTMLElement.prototype.sizeWh = HTMLElement.prototype.setSize;
