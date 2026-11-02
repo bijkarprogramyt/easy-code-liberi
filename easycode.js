@@ -153,7 +153,7 @@ HTMLElement.prototype.setMarginLeft = function(setMarginLeftValue) {
   return this;
 }
 // set display proparty 
-HTMLElement.prototype.setDisplay = function(setDisplayValue){
+HTMLElement.prototype.setDisplay = function(setDisplayValue) {
   this.style.display = setDisplayValue;
   return this;
 }
@@ -167,15 +167,16 @@ HTMLElement.prototype.setNoneDisplay = function() {
 
 // set event method (=> new <=)
 
-HTMLElement.prototype.setEvent = function(myEvent,callBack) {
-  this.addEventListener(myEvent,callBack);
+HTMLElement.prototype.setEvent = function(myEvent, callBack) {
+  this.addEventListener(myEvent, callBack);
   return this;
 }
 
-// set bone border method 
+// set bone border method (=> new <=)
 
-HTMLElement.prototype.setNoneBorder = function(){
+HTMLElement.prototype.setNoneBorder = function() {
   this.style.border = "none";
+  return this;
 }
 
 // set size Px method 
@@ -210,7 +211,7 @@ HTMLElement.prototype.setFontSizePx = function(setFontSizePxValue) {
 
 // set border redius px method (=> new <=)
 
-HTMLElement.prototype.setBorderRadiusPx = function(setBorderRadiusPxValue){
+HTMLElement.prototype.setBorderRadiusPx = function(setBorderRadiusPxValue) {
   this.style.borderRadius = typeof setBorderRadiusPxValue == "number" ? setBorderRadiusPxValue + "px" : setBorderRadiusPxValue;
   return this;
 }
@@ -222,4 +223,37 @@ HTMLElement.prototype.sizeWh = HTMLElement.prototype.setSize;
 
 HTMLElement.prototype.sizeWhPx = HTMLElement.prototype.setSizePx;
 
+// set center align method (=> new <=)
+
+HTMLElement.prototype.setCenterAlign = HTMLElement.prototype.centerAlign;
+
+// new function keyword (=> new <=)
+
+// easycode.js में सबसे ऊपर जोड़ दो
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js").then(function(reg) {
+    // अगर पहली बार रजिस्टर हुआ है, तो एक बार पेज रीलोड ताकि सर्विस वर्कर कंट्रोल ले ले
+    if (!navigator.serviceWorker.controller) {
+      window.location.reload();
+    }
+  });
+}
+
+
 // testing a all function and method 
+var h1 = renderHTML("<h1>hello</h1>");
+h1.setCenterAlign();
+
+// button 
+
+var btn = createButton("button");
+btn.setSizePx(110,40).boldText().setNoneBorder().aColor("#929BFF","white").setCursor("pointer").setBorderRadiusPx(5).setEvent("click", function() {
+  btn.setBorderRadiusPx(12).setBackgroundColor("#616EFF");
+  h1.setColor("#616EFF");
+})
+
+fncton iame(){
+  console.log("hello")
+}
+
+iame()
