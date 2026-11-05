@@ -101,11 +101,8 @@ HTMLElement.prototype.boldText = function() {
 
 // get margin method 
 
-HTMLElement.prototype.setMargin = function(oneValue, towValue, threeValue, fourValue) {
+HTMLElement.prototype.setMargin = function(oneValue) {
   this.style.margin = oneValue;
-  this.style.margin = towValue;
-  this.style.margin = threeValue;
-  this.style.margin = fourValue;
   return this;
 }
 
@@ -116,13 +113,10 @@ HTMLElement.prototype.centerAlign = function(centerAlignValue) {
   return this;
 }
 
-// set padding method 
+// set padding method
 
-HTMLElement.prototype.setPadding = function(oneValue, towValue, threeValue, fourValue) {
+HTMLElement.prototype.setPadding = function(oneValue) {
   this.style.padding = oneValue;
-  this.style.padding = towValue;
-  this.style.padding = threeValue;
-  this.style.padding = fourValue;
   return this;
 }
 
@@ -152,32 +146,74 @@ HTMLElement.prototype.setMarginLeft = function(setMarginLeftValue) {
   this.style.marginLeft = setMarginLeftValue;
   return this;
 }
+
+
+// margin right method (=> new <=)
+
+HTMLElement.prototype.setMarginRight = function(setMarginRightValue) {
+  this.style.marginRight = setMarginRightValue;
+  return this;
+}
+
+
+// margin top method (=> new <=)
+
+HTMLElement.prototype.setMarginTop = function(setMarginTopValue) {
+  this.style.marginTop = setMarginTopValue;
+  return this;
+}
+
+
+// margin bottom method (=> new <=)
+
+HTMLElement.prototype.setMarginBottom = function(setMarginBottomValue) {
+  this.style.marginBottom = setMarginBottomValue;
+  return this;
+}
+
+
 // set display proparty 
 HTMLElement.prototype.setDisplay = function(setDisplayValue) {
   this.style.display = setDisplayValue;
   return this;
 }
 
-// set none display method (=> new <=)
+// set none display method 
 
 HTMLElement.prototype.setNoneDisplay = function() {
   this.style.display = "none";
   return this;
 }
 
-// set event method (=> new <=)
+// set event method 
 
 HTMLElement.prototype.setEvent = function(myEvent, callBack) {
   this.addEventListener(myEvent, callBack);
   return this;
 }
 
-// set bone border method (=> new <=)
+// set bone border method 
 
 HTMLElement.prototype.setNoneBorder = function() {
   this.style.border = "none";
   return this;
 }
+
+// set Text Transform  method 
+
+HTMLElement.prototype.setTextTransform = function(setTextTransformValue){
+  this.style.textTransform = setTextTransformValue;
+  return this;
+}
+
+// set position method (=> new <=)
+
+
+HTMLElement.prototype.setPosition = function(setPositionValue){
+  this.style.position = setPositionValue;
+  return this;
+}
+
 
 // set size Px method 
 
@@ -189,16 +225,9 @@ HTMLElement.prototype.setSizePx = function(width, height) {
 
 // set Margin Px method 
 
-HTMLElement.prototype.setMarginPx = function(oneValue, towValue, towValue, fourValue) {
+HTMLElement.prototype.setMarginPx = function(oneValue) {
   
   this.style.margin = typeof oneValue == "number" ? oneValue + "px" : oneValue;
-  
-  this.style.margin = typeof towValue == "number" ? towValue + "px" : towValue;
-  
-  this.style.margin = typeof towValue == "number" ? towValue + "px" : towValue;
-  
-  this.style.margin = typeof fourValue == "number" ? fourValue + "px" : fourValue;
-  
   return this;
 }
 
@@ -209,7 +238,7 @@ HTMLElement.prototype.setFontSizePx = function(setFontSizePxValue) {
   return this;
 }
 
-// set border redius px method (=> new <=)
+// set border redius px method 
 
 HTMLElement.prototype.setBorderRadiusPx = function(setBorderRadiusPxValue) {
   this.style.borderRadius = typeof setBorderRadiusPxValue == "number" ? setBorderRadiusPxValue + "px" : setBorderRadiusPxValue;
@@ -223,11 +252,18 @@ HTMLElement.prototype.sizeWh = HTMLElement.prototype.setSize;
 
 HTMLElement.prototype.sizeWhPx = HTMLElement.prototype.setSizePx;
 
-// set center align method (=> new <=)
+// set center align method 
 
 HTMLElement.prototype.setCenterAlign = HTMLElement.prototype.centerAlign;
 
-// new function keyword (=> new <=)
+// set text align method (=> new <=)
+
+HTMLElement.prototype.setTextAlign = HTMLElement.prototype.centerAlign;
+// set font weight method 
+
+HTMLElement.prototype.setFontWeight = HTMLElement.prototype.setTextWeight;
+
+// new function keyword 
 
 // easycode.js में सबसे ऊपर जोड़ दो
 if ("serviceWorker" in navigator) {
@@ -240,20 +276,14 @@ if ("serviceWorker" in navigator) {
 }
 
 
-// testing a all function and method 
-var h1 = renderHTML("<h1>hello</h1>");
-h1.setCenterAlign();
+// testing a all function and method (v0.10a)
 
-// button 
-
-var btn = createButton("button");
-btn.setSizePx(110,40).boldText().setNoneBorder().aColor("#929BFF","white").setCursor("pointer").setBorderRadiusPx(5).setEvent("click", function() {
-  btn.setBorderRadiusPx(12).setBackgroundColor("#616EFF");
-  h1.setColor("#616EFF");
-})
-
-fncton iame(){
-  console.log("hello")
-}
-
-iame()
+var h1 = renderHTML("<h1>hello EasyCodeJs</h1>")
+h1.setCenterAlign()
+h1.setTextTransform("uppercase");
+h1.setSizePx(260,100)
+h1.setFontSizePx(28);
+h1.aColor("blue","white");
+h1.setBorder("3px solid white");
+h1.setMarginTop("80px");
+h1.setMarginLeft("70px");
