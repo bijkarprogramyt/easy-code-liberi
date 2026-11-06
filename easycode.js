@@ -140,6 +140,14 @@ HTMLElement.prototype.setId = function(setIdValue) {
   return this;
 }
 
+// setClass method 
+
+HTMLElement.prototype.setClass = function(setClassValue){
+  this.className = setClassValue;
+  return this;
+}
+
+
 // margin left method 
 
 HTMLElement.prototype.setMarginLeft = function(setMarginLeftValue) {
@@ -201,7 +209,7 @@ HTMLElement.prototype.setNoneBorder = function() {
 
 // set Text Transform  method 
 
-HTMLElement.prototype.setTextTransform = function(setTextTransformValue){
+HTMLElement.prototype.setTextTransform = function(setTextTransformValue) {
   this.style.textTransform = setTextTransformValue;
   return this;
 }
@@ -209,7 +217,7 @@ HTMLElement.prototype.setTextTransform = function(setTextTransformValue){
 // set position method (=> new <=)
 
 
-HTMLElement.prototype.setPosition = function(setPositionValue){
+HTMLElement.prototype.setPosition = function(setPositionValue) {
   this.style.position = setPositionValue;
   return this;
 }
@@ -278,10 +286,9 @@ if ("serviceWorker" in navigator) {
 }
 
 
-
 // testing a all function and method (v0.10a)
 
-
-var h1 = renderHTML("<h1>hello</h1>");
-h1.setTextAlign("center");
-h1.setTextTransform("uppercase");
+var m = createButton("button");
+m.setClass("h1");
+var x = $(".h1")[0];
+x.setSizePx(110,40);
