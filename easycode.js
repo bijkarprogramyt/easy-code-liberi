@@ -214,7 +214,12 @@ HTMLElement.prototype.setPosition = function(setPositionValue){
   return this;
 }
 
+// setTextAlign method (=> new <=)
 
+HTMLElement.prototype.setTextAlign = function(setTextAlignValue) {
+  this.style.textAlign = setTextAlignValue;
+  return this;
+}
 // set size Px method 
 
 HTMLElement.prototype.setSizePx = function(width, height) {
@@ -256,9 +261,6 @@ HTMLElement.prototype.sizeWhPx = HTMLElement.prototype.setSizePx;
 
 HTMLElement.prototype.setCenterAlign = HTMLElement.prototype.centerAlign;
 
-// set text align method (=> new <=)
-
-HTMLElement.prototype.setTextAlign = HTMLElement.prototype.centerAlign;
 // set font weight method 
 
 HTMLElement.prototype.setFontWeight = HTMLElement.prototype.setTextWeight;
@@ -276,14 +278,10 @@ if ("serviceWorker" in navigator) {
 }
 
 
+
 // testing a all function and method (v0.10a)
 
-var h1 = renderHTML("<h1>hello EasyCodeJs</h1>")
-h1.setCenterAlign()
+
+var h1 = renderHTML("<h1>hello</h1>");
+h1.setTextAlign("center");
 h1.setTextTransform("uppercase");
-h1.setSizePx(260,100)
-h1.setFontSizePx(28);
-h1.aColor("blue","white");
-h1.setBorder("3px solid white");
-h1.setMarginTop("80px");
-h1.setMarginLeft("70px");
