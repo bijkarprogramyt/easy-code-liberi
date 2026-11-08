@@ -142,7 +142,7 @@ HTMLElement.prototype.setId = function(setIdValue) {
 
 // setClass method 
 
-HTMLElement.prototype.setClass = function(setClassValue){
+HTMLElement.prototype.setClass = function(setClassValue) {
   this.className = setClassValue;
   return this;
 }
@@ -156,7 +156,7 @@ HTMLElement.prototype.setMarginLeft = function(setMarginLeftValue) {
 }
 
 
-// margin right method (=> new <=)
+// margin right method 
 
 HTMLElement.prototype.setMarginRight = function(setMarginRightValue) {
   this.style.marginRight = setMarginRightValue;
@@ -164,7 +164,7 @@ HTMLElement.prototype.setMarginRight = function(setMarginRightValue) {
 }
 
 
-// margin top method (=> new <=)
+// margin top method 
 
 HTMLElement.prototype.setMarginTop = function(setMarginTopValue) {
   this.style.marginTop = setMarginTopValue;
@@ -172,7 +172,7 @@ HTMLElement.prototype.setMarginTop = function(setMarginTopValue) {
 }
 
 
-// margin bottom method (=> new <=)
+// margin bottom method 
 
 HTMLElement.prototype.setMarginBottom = function(setMarginBottomValue) {
   this.style.marginBottom = setMarginBottomValue;
@@ -214,7 +214,7 @@ HTMLElement.prototype.setTextTransform = function(setTextTransformValue) {
   return this;
 }
 
-// set position method (=> new <=)
+// set position method 
 
 
 HTMLElement.prototype.setPosition = function(setPositionValue) {
@@ -222,12 +222,90 @@ HTMLElement.prototype.setPosition = function(setPositionValue) {
   return this;
 }
 
-// setTextAlign method (=> new <=)
+// setTextAlign method
 
 HTMLElement.prototype.setTextAlign = function(setTextAlignValue) {
   this.style.textAlign = setTextAlignValue;
   return this;
 }
+
+// set position left method (=> new <=)
+
+HTMLElement.prototype.setPaddingLeft = function(setPaddingLeftValue) {
+  this.style.paddingLeft = setPaddingLeftValue;
+  return this;
+}
+
+// set position left method (=> new <=)
+
+HTMLElement.prototype.setPaddingRight = function(setPaddingRightValue) {
+  this.style.paddingRight = setPaddingRightValue;
+  return this;
+}
+
+// set position left method (=> new <=)
+
+HTMLElement.prototype.setPaddingTop = function(setPaddingTopValue) {
+  this.style.paddingTop = setPaddingTopValue;
+  return this;
+}
+
+// set position left method (=> new <=)
+
+HTMLElement.prototype.setPaddingBottom = function(setPaddingBottomValue) {
+  this.style.paddingBottom = setPaddingBottomValue;
+  return this;
+}
+
+// set text element value (=> new <=)
+
+HTMLElement.prototype.setTextElement = function (setTextElementValue) {
+  this.textContent = setTextElementValue;
+  return this;
+}
+
+// set left method (=> new <=)
+
+HTMLElement.prototype.setLeft = function(setLeftValue){
+  this.style.left = setLeftValue;
+  return this;
+}
+// set left method (=> new <=)
+
+HTMLElement.prototype.setRight = function(setRightValue){
+  this.style.right = setRightValue;
+  return this;
+}
+// set left method (=> new <=)
+
+HTMLElement.prototype.setTop = function(setTopValue){
+  this.style.top = setTopValue;
+  return this;
+}
+// set left method (=> new <=)
+
+HTMLElement.prototype.setBottom = function(setBottomValue){
+  this.style.bottom = setBottomValue;
+  return this;
+}
+
+// short style method (=> new <=)
+
+HTMLElement.prototype.quickCss = function(quickCssValue){
+  this.style.cssText = quickCssValue;
+  return this;
+  
+}
+
+// cloneElement method (=> new <=)
+
+HTMLElement.prototype.cloneElement = function(htmlElement){
+  var cloneElementVar = this.cloneNode(true);
+  var perent = htmlElement || document.body;
+  perent.appendChild(cloneElementVar)
+  return cloneElementVar;
+}
+
 // set size Px method 
 
 HTMLElement.prototype.setSizePx = function(width, height) {
@@ -285,10 +363,3 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-
-// testing a all function and method (v0.10a)
-
-var m = createButton("button");
-m.setClass("h1");
-var x = $(".h1")[0];
-x.setSizePx(110,40);
