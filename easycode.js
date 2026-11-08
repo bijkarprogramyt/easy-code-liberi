@@ -7,9 +7,9 @@ function $(selector) {
     return document.getElementById(element)
   }
   if (htmlElemet == ".") {
-    return document.getElementsByClassName(element);
+    return document.getElementsByClassName(element)[0];
   }
-  return document.getElementsByTagName(selector);
+  return document.getElementsByTagName(selector)[0];
 }
 
 // create button function 
@@ -376,3 +376,10 @@ if ("serviceWorker" in navigator) {
     }
   });
 }
+
+
+// testing a all function and method (v0.13a)
+
+var x = $("button");
+x.aColor("blue","white");
+
