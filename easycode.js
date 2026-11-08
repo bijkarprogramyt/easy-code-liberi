@@ -229,75 +229,89 @@ HTMLElement.prototype.setTextAlign = function(setTextAlignValue) {
   return this;
 }
 
-// set position left method (=> new <=)
+// set position left method 
 
 HTMLElement.prototype.setPaddingLeft = function(setPaddingLeftValue) {
   this.style.paddingLeft = setPaddingLeftValue;
   return this;
 }
 
-// set position left method (=> new <=)
+// set position left method 
 
 HTMLElement.prototype.setPaddingRight = function(setPaddingRightValue) {
   this.style.paddingRight = setPaddingRightValue;
   return this;
 }
 
-// set position left method (=> new <=)
+// set position left method 
 
 HTMLElement.prototype.setPaddingTop = function(setPaddingTopValue) {
   this.style.paddingTop = setPaddingTopValue;
   return this;
 }
 
-// set position left method (=> new <=)
+// set position left method 
 
 HTMLElement.prototype.setPaddingBottom = function(setPaddingBottomValue) {
   this.style.paddingBottom = setPaddingBottomValue;
   return this;
 }
 
-// set text element value (=> new <=)
+// set text element value 
 
 HTMLElement.prototype.setTextElement = function (setTextElementValue) {
   this.textContent = setTextElementValue;
   return this;
 }
 
-// set left method (=> new <=)
+// set left method 
 
 HTMLElement.prototype.setLeft = function(setLeftValue){
   this.style.left = setLeftValue;
   return this;
 }
-// set left method (=> new <=)
+// set left method 
 
 HTMLElement.prototype.setRight = function(setRightValue){
   this.style.right = setRightValue;
   return this;
 }
-// set left method (=> new <=)
+// set left method 
 
 HTMLElement.prototype.setTop = function(setTopValue){
   this.style.top = setTopValue;
   return this;
 }
-// set left method (=> new <=)
+// set left method 
 
 HTMLElement.prototype.setBottom = function(setBottomValue){
   this.style.bottom = setBottomValue;
   return this;
 }
 
-// short style method (=> new <=)
+// short style method
 
 HTMLElement.prototype.quickCss = function(quickCssValue){
   this.style.cssText = quickCssValue;
   return this;
-  
 }
 
-// cloneElement method (=> new <=)
+// in HTML method (=> new <=)
+
+HTMLElement.prototype.inHTML = function(quickCssValue){
+  this.innerHTML = quickCssValue;
+  return this;
+}
+
+// in Text method (=> new <=)
+
+HTMLElement.prototype.inText = function(quickCssValue){
+  this.innerText = quickCssValue;
+  return this;
+}
+
+
+// cloneElement method 
 
 HTMLElement.prototype.cloneElement = function(htmlElement){
   var cloneElementVar = this.cloneNode(true);
@@ -362,4 +376,3 @@ if ("serviceWorker" in navigator) {
     }
   });
 }
-
