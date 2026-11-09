@@ -1,4 +1,11 @@
-// html selector 
+console.warn(
+  "%c⚠️ EasyCodeJS%c Array indexing like [0] has been officially removed from the '$' class selector. If you need index access (e.g., [0], [1], [2]...), please use $class() instead.",
+  "background: #ffcc00; color: #000; font-weight: bold; padding: 2px 6px; border-radius: 3px;",
+  "color: #ff9900; font-weight: bold;"
+);
+
+
+// html $ selector  
 
 function $(selector) {
   var htmlElemet = selector.charAt(0);
@@ -12,6 +19,22 @@ function $(selector) {
   return document.getElementsByTagName(selector)[0];
 }
 
+// html $ class Selector  (=> new <=)
+
+function $class(classSelector){
+  // 1. Agar shuru me '.' hai, to use hata do taaki dono tarike se kaam kare
+  var cleanName = classSelector.startsWith(".") ? classSelector.slice(1) : classSelector;
+  
+  // 2. Elements nikalo
+  return document.getElementsByClassName(cleanName);
+}
+
+// html $ id Selector  (=> new <=)
+
+function $id(idSelector) {
+  var idName = idSelector.startsWith("#") ? idSelector.slice(1) : idSelector;
+  return document.getElementById(idName)
+}
 // create button function 
 
 function createButton(textButton) {
@@ -296,14 +319,14 @@ HTMLElement.prototype.quickCss = function(quickCssValue){
   return this;
 }
 
-// in HTML method (=> new <=)
+// in HTML method 
 
 HTMLElement.prototype.inHTML = function(quickCssValue){
   this.innerHTML = quickCssValue;
   return this;
 }
 
-// in Text method (=> new <=)
+// in Text method 
 
 HTMLElement.prototype.inText = function(quickCssValue){
   this.innerText = quickCssValue;
@@ -376,10 +399,3 @@ if ("serviceWorker" in navigator) {
     }
   });
 }
-
-
-// testing a all function and method (v0.13a)
-
-var x = $("button");
-x.aColor("blue","white");
-
