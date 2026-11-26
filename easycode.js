@@ -14,12 +14,12 @@ function $(selector) {
     return document.getElementById(element)
   }
   if (htmlElemet == ".") {
-    return document.getElementsByClassName(element)[0];
+    return document.getElementsByClassName(element);
   }
   return document.getElementsByTagName(selector)[0];
 }
 
-// html $ class Selector  (=> new <=)
+// html $ class Selector
 
 function $class(classSelector){
   // 1. Agar shuru me '.' hai, to use hata do taaki dono tarike se kaam kare
@@ -29,7 +29,7 @@ function $class(classSelector){
   return document.getElementsByClassName(cleanName);
 }
 
-// html $ id Selector  (=> new <=)
+// html $ id Selector  
 
 function $id(idSelector) {
   var idName = idSelector.startsWith("#") ? idSelector.slice(1) : idSelector;
@@ -52,6 +52,17 @@ function renderHTML(tag) {
   document.body.appendChild(HtmlElement);
   return HtmlElement;
 }
+
+// createInputMethod (=> new <=)
+
+function createInput(createInputValue){
+  var createInputBtn = document.createElement("input");
+  if (createInputValue !== undefined) {
+    createInputBtn.createInputValue;
+  }
+  return createInputBtn;
+}
+
 // set size method 
 
 HTMLElement.prototype.setSize = function(width, height) {
@@ -333,6 +344,19 @@ HTMLElement.prototype.inText = function(quickCssValue){
   return this;
 }
 
+// set opacity method (=> new <=)
+
+HTMLElement.prototype.setOpacity = function(setOpacityValue){
+  this.style.opacity = setOpacityValue;
+  return this;
+}
+
+// set on click method (=> new <=)
+
+HTMLElement.prototype.setOnClick = function(setOnClickValue) {
+  this.onclick = setOnClickValue;
+  return this;
+}
 
 // cloneElement method 
 
@@ -343,7 +367,27 @@ HTMLElement.prototype.cloneElement = function(htmlElement){
   return cloneElementVar;
 }
 
-// set size Px method 
+// open file method (=> new {experimental} <=)
+
+HTMLElement.prototype.openFile = function(openFileValue) {
+  this.type = "files";
+}
+
+// set text type method (=> new <=)
+
+HTMLElement.prototype.setType = function(setTypeValue) {
+  this.type = setTypeValue;
+  return this;
+}
+
+// set acsept method (=> new <=)
+
+HTMLElement.prototype.setAcsept = function(setAcseptValue) {
+  this.acsept = setAcseptValue;
+  return this;
+}
+
+//set size Px method 
 
 HTMLElement.prototype.setSizePx = function(width, height) {
   this.style.width = typeof width == "number" ? width + "px" : width;
